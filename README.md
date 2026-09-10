@@ -40,7 +40,17 @@ Esses insights fornecem aos stakeholders métricas de negócio essenciais, possi
 
 Este projeto segue a **Arquitetura Medallion**, organizada em três camadas: **Bronze**, **Silver** e **Gold**.
 
-1. **Bronze Layer** — Armazena os dados brutos exatamente como vêm da origem (arquivos CSV dos sistemas CRM e ERP), sem nenhuma transformação. Os dados são carregados via `BULK INSERT` para dentro do SQL Server.
+**Fontes:** os dados de origem vêm dos sistemas **CRM** e **ERP**, fornecidos como arquivos CSV.
+
+| Camada | Descrição | Tipo de Objeto | Carga | Transformações | Modelo de Dados |
+|---|---|---|---|---|---|
+| 🥉 **Bronze** | Armazena os dados brutos exatamente como vêm da origem, sem nenhuma transformação | Tabelas | Full Load, Truncate & Insert | Nenhuma | Nenhum (as-is) |
+| 🥈 **Silver** | Aplica limpeza, padronização e tratamento de qualidade sobre os dados da Bronze | Tabelas | Full Load, Truncate & Insert | Limpeza de dados, padronização, normalização, colunas derivadas, enriquecimento | Nenhum (as-is) |
+| 🥇 **Gold** | Modela os dados em formato de negócio, pronto para consultas analíticas | Views | Sem carga (consulta direta) | Integração de dados, agregações, regras de negócio | Star Schema, tabela flat, tabela agregada |
+
+**Consumo:** os dados da camada Gold são consumidos por ferramentas de **BI & Relatórios**, consultas **SQL Ad-Hoc** e potencialmente projetos de **Machine Learning**.
+
+1. **Bronze Layer** — Armazena os dados brutos exatamente como vêm da origem (arquivos CSV dos sistemas CRM e ERP), sem nenhuma transformação. Os dados são carregados via `BULK INSERT` para dentro do SQL Server, usando stored procedures.
 
 2. **Silver Layer** — Aplica limpeza, padronização e tratamento de qualidade sobre os dados da Bronze: remoção de duplicatas, tratamento de valores nulos, padronização de texto, correção de tipos de dado e enriquecimento com colunas de metadado (`dwh_create_date`).
 
