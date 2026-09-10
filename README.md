@@ -93,3 +93,14 @@ sql-data-warehouse-project/
 ## 🛡 Licença
 
 Este projeto está licenciado sob a [Licença MIT](https://github.com/Iury-Benter-Magalhaes/sql-data-warehouse-project/blob/main/LICENSE). Você é livre para usar, modificar e compartilhar este projeto, desde que dê a devida atribuição.
+
+## 🎉 Sobre Mim
+
+Olá! Sou o Iury, profissional de TI em transição de carreira para **Data Engineering**. Com experiência prévia em suporte e infraestrutura, venho me especializando em SQL, modelagem de dados e cloud computing (AWS), construindo projetos práticos para consolidar esse conhecimento.
+
+Este repositório faz parte do meu portfólio de estudos, aplicando conceitos de arquitetura medallion, ETL e modelagem dimensional em um cenário próximo ao do mercado real.
+
+Vamos nos conectar! Fico à disposição nas seguintes plataformas:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/iury-benter-magalhaes)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Iury-Benter-Magalhaes)
